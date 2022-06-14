@@ -14,14 +14,14 @@ public class CreateRevisao {
 		
 		EntityManager em = HibernateUtil.getEntityManager();
 		
-		Veiculo veic = em.find(Veiculo.class, 3);
+		Veiculo veic = em.find(Veiculo.class, 7);
 		if(veic == null) {
 			System.out.println(veic + "é null");
 			return;
 		}
 		Revisoes rev = new Revisoes();
 		rev.setDataRev(new Date());
-		rev.setValorFinal(900.00f);
+		rev.setValorFinal(90.50f);
 		rev.setVeiculo(veic);
 		
 		em.getTransaction().begin();
