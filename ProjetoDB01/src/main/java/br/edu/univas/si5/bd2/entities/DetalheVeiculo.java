@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,10 +19,9 @@ public class DetalheVeiculo {
 	
 	@OneToOne
 	@JoinColumn(name="veic_fk")
-	private Veiculo veic_fk;
+	private Veiculo veiculo;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="revisoes_fk")
+	@OneToMany(mappedBy= "detalheVeiculo", fetch=FetchType.LAZY)
 	private Set<Revisoes> revisoes;
 
 	public String getModelo() {
@@ -49,12 +48,12 @@ public class DetalheVeiculo {
 		this.ano = ano;
 	}
 
-	public Veiculo getVeic_fk() {
-		return veic_fk;
+	public Veiculo getVeiculo() {
+		return veiculo;
 	}
 
-	public void setVeic_fk(Veiculo veic_fk) {
-		this.veic_fk = veic_fk;
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
 	}
 
 	public Set<Revisoes> getRevisoes() {
