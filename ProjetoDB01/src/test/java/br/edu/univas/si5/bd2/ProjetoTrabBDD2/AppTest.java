@@ -1,4 +1,4 @@
-package br.edu.univas.si5.bd2.ProjetoDB01;
+package br.edu.univas.si5.bd2.ProjetoTrabBDD2;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

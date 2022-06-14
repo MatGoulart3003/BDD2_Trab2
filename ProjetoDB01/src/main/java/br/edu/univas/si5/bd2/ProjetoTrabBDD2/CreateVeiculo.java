@@ -1,4 +1,4 @@
-package br.edu.univas.si5.bd2.ProjetoDB01;
+package br.edu.univas.si5.bd2.ProjetoTrabBDD2;
 
 import javax.persistence.EntityManager;
 
@@ -11,13 +11,13 @@ public class CreateVeiculo {
 	public static void main(String[] args) {
 		
 		Veiculo veic = new Veiculo();
-		veic.setProprietario("Mateus");
-		veic.setSenha_prop("mat123");
+		veic.setProprietario("fabricio");
+		veic.setSenha_prop("fabricio23");
 		
 		DetalheVeiculo detVeic = new DetalheVeiculo();
-		detVeic.setModelo("Gol G4");
-		detVeic.setMarca("Volkswagen");
-		detVeic.setAno(2012);
+		detVeic.setModelo("Fusca");
+		detVeic.setMarca("VW");
+		detVeic.setAno(1970);
 		detVeic.setVeiculo(veic);
 		
 		EntityManager em;

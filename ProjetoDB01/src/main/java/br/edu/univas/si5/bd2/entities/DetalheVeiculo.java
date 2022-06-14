@@ -1,17 +1,20 @@
 package br.edu.univas.si5.bd2.entities;
 
-import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+
 import javax.persistence.OneToOne;
 
 @Entity
 public class DetalheVeiculo {
 	
+	@Override
+	public String toString() {
+		return " Modelo = " + modelo;
+	}
+
 	@Id
 	private String modelo;
 	private String marca;
@@ -21,10 +24,7 @@ public class DetalheVeiculo {
 	@JoinColumn(name="veic_fk")
 	private Veiculo veiculo;
 	
-	@OneToMany(mappedBy= "detalheVeiculo", fetch=FetchType.LAZY)
-	private Set<Revisoes> revisoes;
-
-	public String getModelo() {
+		public String getModelo() {
 		return modelo;
 	}
 
@@ -55,16 +55,6 @@ public class DetalheVeiculo {
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
-
-	public Set<Revisoes> getRevisoes() {
-		return revisoes;
-	}
-
-	public void setRevisoes(Set<Revisoes> revisoes) {
-		this.revisoes = revisoes;
-	}
-
-	
 	
 
 }

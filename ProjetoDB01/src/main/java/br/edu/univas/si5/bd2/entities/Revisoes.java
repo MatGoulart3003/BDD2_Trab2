@@ -14,6 +14,11 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Revisoes {
 	
+	@Override
+	public String toString() {
+		return "Revisão " + codigo;
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer codigo;
@@ -22,8 +27,8 @@ public class Revisoes {
 	private Float valorFinal;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="detalheVeiculo_fk")
-	private DetalheVeiculo detalheVeiculo;
+	@JoinColumn(name="veic_fk")
+	private Veiculo veic;
 
 	public Integer getCodigo() {
 		return codigo;
@@ -49,13 +54,13 @@ public class Revisoes {
 		this.valorFinal = valorFinal;
 	}
 
-	public DetalheVeiculo getDetalheVeiculo() {
-		return detalheVeiculo;
+	public Veiculo getVeiculo() {
+		return veic;
 	}
 
-	public void setDetalheVeiculo(DetalheVeiculo detalheVeiculo) {
-		this.detalheVeiculo = detalheVeiculo;
+	public void setVeiculo(Veiculo veiculo) {
+		this.veic = veiculo;
 	}
-	
-	
+
+
 }
