@@ -21,7 +21,7 @@ public class CreateRevisao {
 		}
 		Revisoes rev = new Revisoes();
 		rev.setDataRev(new Date());
-		rev.setValorFinal(90.50f);
+		rev.setValorFinal(9000.50f);
 		rev.setVeiculo(veic);
 		
 		em.getTransaction().begin();

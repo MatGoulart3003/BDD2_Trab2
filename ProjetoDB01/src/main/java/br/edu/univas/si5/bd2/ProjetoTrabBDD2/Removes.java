@@ -18,10 +18,9 @@ public class Removes {
 		
 		if (objVeic != null) {
 			DetalheVeiculo objDet = em.find(DetalheVeiculo.class, objVeic.getDetalheVeiculo().getModelo());
-			//Revisoes objRev = em.find;
+			//objVeic.getRevisoes().		
 			
-			em.getTransaction().begin();
-		//	em.remove(objRev);
+			em.getTransaction().begin();		
 			em.remove(objVeic);
 			em.remove(objDet);
 			em.getTransaction().commit();
