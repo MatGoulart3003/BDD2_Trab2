@@ -1,25 +1,33 @@
 package br.edu.univas.si5.bd2.DAO;
 
+import java.util.Scanner;
+
 import javax.persistence.EntityManager;
 
-import br.edu.univas.si5.bd2.entities.DetalheVeiculo;
 import br.edu.univas.si5.bd2.entities.Revisoes;
 import br.edu.univas.si5.bd2.entities.Veiculo;
 import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class Finds {
 	
+	Scanner scan = new Scanner(System.in);
 	EntityManager em = HibernateUtil.getEntityManager();
 	
 	public void findVeic () {
-		Veiculo objVeic = em.find(Veiculo.class, 2); //busca veiculo com pk 2
-		DetalheVeiculo objDet = em.find(DetalheVeiculo.class, objVeic.getDetalheVeiculo());
-		System.out.println("Veiculo: " + objVeic + "\n"
-				+ "Detalhes:" + objDet);
+		
+		System.out.println("Digite a chave primária do veiculo à ser buscado");
+		Veiculo objVeic = em.find(Veiculo.class, scan.nextInt()); //busca veiculo com pk 2
+		scan.nextLine();
+		System.out.println("\nVeiculo: " + objVeic + "\n"
+				+ "Detalhes:" + objVeic.getDetalheVeiculo());
 		
 	}
 	public void findRevisao() {
-		Revisoes objRev = em.find(Revisoes.class, 3); //busca revisão com pk 3
-		System.out.println("Revisão: " + objRev + "\n\n\n");
+		
+		System.out.println("Digite a chave primária da revisão à ser buscada");
+		Revisoes objRev = em.find(Revisoes.class, scan.nextInt()); //busca revisão com pk 3
+		scan.nextLine();
+		System.out.println("Revisão: " + objRev + " No veículo: " + objRev.getVeiculo().getProprietario() + "\n\n\n" );
+		
 	}
 }

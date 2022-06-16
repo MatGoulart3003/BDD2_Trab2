@@ -1,5 +1,7 @@
 package br.edu.univas.si5.bd2.DAO;
 
+import java.util.Scanner;
+
 import javax.persistence.EntityManager;
 
 import br.edu.univas.si5.bd2.entities.DetalheVeiculo;
@@ -10,14 +12,21 @@ public class CreateVeiculo {
 
 public void createVeic(){
 	
+	Scanner scan = new Scanner(System.in);
 	Veiculo veic = new Veiculo();
-	veic.setProprietario("fabricio");
-	veic.setSenha_prop("fabricio23");
+	System.out.println("Digite o Proprietário");
+	veic.setProprietario(scan.nextLine());
+	System.out.println("Digite a senha do Proprietário");
+	veic.setSenha_prop(scan.nextLine());
 	
 	DetalheVeiculo detVeic = new DetalheVeiculo();
-	detVeic.setModelo("Fusca");
-	detVeic.setMarca("VW");
-	detVeic.setAno(1970);
+	System.out.println("Digite o Modelo");
+	detVeic.setModelo(scan.nextLine());
+	System.out.println("Digite a Marca");	
+	detVeic.setMarca(scan.nextLine());
+	System.out.println("Digite o Ano");	
+	detVeic.setAno(scan.nextInt());	
+	scan.nextLine();
 	detVeic.setVeiculo(veic);
 	
 	EntityManager em;
@@ -28,7 +37,7 @@ public void createVeic(){
 	em.persist(detVeic);
 	em.getTransaction().commit();
 
-
+	scan.close();
 }
 
 }
