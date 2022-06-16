@@ -11,6 +11,7 @@ import br.edu.univas.si5.bd2.utils.HibernateUtil;
 public class CreateVeiculo {
 	
 	Scanner scan = new Scanner(System.in);
+	
 	public void createVeic(){
 	
 	

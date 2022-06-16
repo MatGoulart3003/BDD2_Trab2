@@ -10,8 +10,8 @@ import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class Finds {
 	
-	Scanner scan; 
-	EntityManager em = HibernateUtil.getEntityManager();
+	private Scanner scan; 
+	private EntityManager em = HibernateUtil.getEntityManager();
 	
 	public void findVeic () {
 		scan = new Scanner(System.in);

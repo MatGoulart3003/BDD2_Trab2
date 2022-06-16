@@ -12,8 +12,8 @@ import br.edu.univas.si5.bd2.utils.HibernateUtil;
 public class CreateRevisao {
 	
 	Scanner scan = new Scanner(System.in);
-	public void createRevisao() {
-		
+	
+	public void createRevisao() {	
 		
 		EntityManager em = HibernateUtil.getEntityManager();
 	

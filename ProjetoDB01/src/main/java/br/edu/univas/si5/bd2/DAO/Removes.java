@@ -12,7 +12,7 @@ import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class Removes {
 	
-	Scanner scan;
+	private Scanner scan;
 	public void removeVeiculo() {
 		scan = new Scanner(System.in);
 		EntityManager em = HibernateUtil.getEntityManager();
@@ -42,7 +42,6 @@ public class Removes {
 		
 		
 	}
-
 	public void removeRevisao() {
 		scan = new Scanner(System.in);
 		EntityManager em = HibernateUtil.getEntityManager();
@@ -62,5 +61,4 @@ public class Removes {
 		
 	}
 	
-
 }	

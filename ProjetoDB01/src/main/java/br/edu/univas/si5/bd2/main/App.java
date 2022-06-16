@@ -20,10 +20,7 @@ public class App {
 	static Scanner scan = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		
-		
 		int i = 0;
-				
 		do {			
 			view.mainMenu();
 			i = scanI(scan);			

@@ -33,34 +33,25 @@ public class Revisoes {
 	public Integer getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-
 	public Date getDataRev() {
 		return dataRev;
 	}
-
 	public void setDataRev(Date dataRev) {
 		this.dataRev = dataRev;
 	}
-
 	public Float getValorFinal() {
 		return valorFinal;
 	}
-
 	public void setValorFinal(Float valorFinal) {
 		this.valorFinal = valorFinal;
 	}
-
 	public Veiculo getVeiculo() {
 		return veic;
 	}
-
 	public void setVeiculo(Veiculo veiculo) {
 		this.veic = veiculo;
 	}
-
-
 }
