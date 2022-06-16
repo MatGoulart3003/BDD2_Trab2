@@ -1,5 +1,6 @@
 package br.edu.univas.si5.bd2.DAO;
 
+import java.util.Scanner;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
@@ -10,11 +11,15 @@ import br.edu.univas.si5.bd2.entities.Veiculo;
 import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class Removes {
-		
+	
+	Scanner scan;
 	public void removeVeiculo() {
+		scan = new Scanner(System.in);
 		EntityManager em = HibernateUtil.getEntityManager();
-		int pkVeic = 7;
-		Veiculo objVeic = em.find(Veiculo.class, pkVeic);
+		
+		System.out.println("Digite a chave do veículo a ser deletado:");
+		Veiculo objVeic = em.find(Veiculo.class, scan.nextInt());
+		scan.nextLine();
 		
 		if (objVeic != null) {
 			DetalheVeiculo objDet = em.find(DetalheVeiculo.class, objVeic.getDetalheVeiculo().getModelo());
@@ -39,9 +44,12 @@ public class Removes {
 	}
 
 	public void removeRevisao() {
+		scan = new Scanner(System.in);
 		EntityManager em = HibernateUtil.getEntityManager();
-		int pkRev = 1;
-		Revisoes objRev = em.find(Revisoes.class, pkRev);
+		
+		System.out.println("Digite a chave da revisão a ser deletada:");
+		Revisoes objRev = em.find(Revisoes.class, scan.nextInt());
+		scan.nextLine();
 		
 		if(objRev != null) {
 			em.getTransaction().begin();

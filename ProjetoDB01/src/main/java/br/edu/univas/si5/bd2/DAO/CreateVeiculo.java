@@ -9,35 +9,35 @@ import br.edu.univas.si5.bd2.entities.Veiculo;
 import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class CreateVeiculo {
-
-public void createVeic(){
 	
 	Scanner scan = new Scanner(System.in);
-	Veiculo veic = new Veiculo();
-	System.out.println("Digite o Proprietário");
-	veic.setProprietario(scan.nextLine());
-	System.out.println("Digite a senha do Proprietário");
-	veic.setSenha_prop(scan.nextLine());
+	public void createVeic(){
 	
-	DetalheVeiculo detVeic = new DetalheVeiculo();
-	System.out.println("Digite o Modelo");
-	detVeic.setModelo(scan.nextLine());
-	System.out.println("Digite a Marca");	
-	detVeic.setMarca(scan.nextLine());
-	System.out.println("Digite o Ano");	
-	detVeic.setAno(scan.nextInt());	
-	scan.nextLine();
-	detVeic.setVeiculo(veic);
 	
-	EntityManager em;
-	em = HibernateUtil.getEntityManager();
+		Veiculo veic = new Veiculo();
+		System.out.println("Digite o Proprietário");
+		veic.setProprietario(scan.nextLine());
+		System.out.println("Digite a senha do Proprietário");
+		veic.setSenha_prop(scan.nextLine());
 	
-	em.getTransaction().begin();
-	em.persist(veic);
-	em.persist(detVeic);
-	em.getTransaction().commit();
+		DetalheVeiculo detVeic = new DetalheVeiculo();
+		System.out.println("Digite o Modelo");
+		detVeic.setModelo(scan.nextLine());
+		System.out.println("Digite a Marca");	
+		detVeic.setMarca(scan.nextLine());
+		System.out.println("Digite o Ano");	
+		detVeic.setAno(scan.nextInt());	
+		scan.nextLine();
+		detVeic.setVeiculo(veic);
+	
+		EntityManager em;
+		em = HibernateUtil.getEntityManager();
+	
+		em.getTransaction().begin();
+		em.persist(veic);
+		em.persist(detVeic);
+		em.getTransaction().commit();
 
-	scan.close();
-}
+	}
 
 }

@@ -10,10 +10,11 @@ import br.edu.univas.si5.bd2.entities.Veiculo;
 import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class CreateRevisao {
-
+	
+	Scanner scan = new Scanner(System.in);
 	public void createRevisao() {
 		
-		Scanner scan = new Scanner(System.in);
+		
 		EntityManager em = HibernateUtil.getEntityManager();
 	
 		System.out.println("Digite a chave primária do Veiculo correspondente à revisão:");
@@ -37,7 +38,7 @@ public class CreateRevisao {
 		em.getTransaction().commit();
 	
 		System.out.println("Revisão " + rev + " cadastrada com sucesso" );
-		scan.close();
+		
 	}
 
 }
