@@ -1,4 +1,4 @@
-package br.edu.univas.si5.bd2.ProjetoTrabBDD2;
+package br.edu.univas.si5.bd2.DAO;
 
 import java.util.Set;
 
@@ -10,21 +10,11 @@ import br.edu.univas.si5.bd2.entities.Veiculo;
 import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class Removes {
-	
-	public static void main (String [] args) {
 		
+	public void removeVeiculo() {
 		EntityManager em = HibernateUtil.getEntityManager();
 		int pkVeic = 7;
-		int pkRev = 1;
-		int pkDetVeic = 2;
-		
-	//	removeVeiculo(em,pkVeic);
-		removeRevisao(em,pkRev);
-		
-	}
-	
-	public static void removeVeiculo(EntityManager em, int pk) {
-		Veiculo objVeic = em.find(Veiculo.class, pk);
+		Veiculo objVeic = em.find(Veiculo.class, pkVeic);
 		
 		if (objVeic != null) {
 			DetalheVeiculo objDet = em.find(DetalheVeiculo.class, objVeic.getDetalheVeiculo().getModelo());
@@ -48,9 +38,11 @@ public class Removes {
 		
 	}
 
-	public static void removeRevisao(EntityManager em, int pk) {
+	public void removeRevisao() {
+		EntityManager em = HibernateUtil.getEntityManager();
+		int pkRev = 1;
+		Revisoes objRev = em.find(Revisoes.class, pkRev);
 		
-		Revisoes objRev = em.find(Revisoes.class, pk);
 		if(objRev != null) {
 			em.getTransaction().begin();
 			em.remove(objRev);
@@ -61,5 +53,6 @@ public class Removes {
 		}
 		
 	}
+	
 
 }	

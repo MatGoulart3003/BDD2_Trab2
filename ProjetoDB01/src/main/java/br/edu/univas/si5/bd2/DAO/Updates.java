@@ -1,4 +1,4 @@
-package br.edu.univas.si5.bd2.ProjetoTrabBDD2;
+package br.edu.univas.si5.bd2.DAO;
 
 import java.util.Date;
 
@@ -11,19 +11,12 @@ import br.edu.univas.si5.bd2.utils.HibernateUtil;
 
 public class Updates {
 	
-	public static void main (String[] args) {
+	
+		
+	public void updateDetalheVeiculo(){
 		
 		EntityManager em = HibernateUtil.getEntityManager();
-		em = HibernateUtil.getEntityManager();
-		
-		updateDetalheVeiculo(em);
-		updateVeiculo(em);
-		updateRevisoes(em);
-		
-	}
-	
-	private static void updateDetalheVeiculo(EntityManager em){
-				
+		em = HibernateUtil.getEntityManager();		
 		String pk = "Fusca";
 		DetalheVeiculo objDet = em.find(DetalheVeiculo.class, pk);
 		
@@ -39,8 +32,10 @@ public class Updates {
 		}
 	}
 	
-	private static void updateVeiculo(EntityManager em) {
+	public void updateVeiculo() {
 		
+		EntityManager em = HibernateUtil.getEntityManager();
+		em = HibernateUtil.getEntityManager();		
 		int pk = 7;
 		Veiculo objVeic = em.find(Veiculo.class, pk);
 		
@@ -58,8 +53,9 @@ public class Updates {
 		
 	}
 	
-	private static void updateRevisoes(EntityManager em) {
+	public void updateRevisoes() {
 		
+		EntityManager em = HibernateUtil.getEntityManager();
 		int pk = 3;
 		Revisoes objRev = em.find(Revisoes.class, pk);
 		
